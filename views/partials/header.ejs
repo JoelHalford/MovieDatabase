@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movies</title>
+	<link rel="stylesheet" href="../../search.css">
+	<link rel="stylesheet" href="../../main.css">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<nav>
+		<div id="search-box" class="form-inline">
+	    <input id="searchInput" class="form-control mr-sm-2" type="text" placeholder="Title" aria-label="Title name">
+	    <input id="searchYear" class="form-control mr-sm-2" type="text" placeholder="Year" aria-label="Title year">
+	    <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" onclick="apiCall(1)">Search</button>
+  	</div>
+<!-- 		<div id="search-box" class="input-group mb-3">
+		  <input id="searchInput" type="text" class="form-control" placeholder="Movie name" name="search" aria-label="Movie name" aria-describedby="basic-addon2">
+		  <div class="input-group-append">
+		  	<input id="yearInput" type="text" class="form-control" placeholder="Movie year" name="search" aria-label="Movie year" aria-describedby="basic-addon2">
+			  <button id="submit" class="btn btn-outline-secondary" type="button" onclick="apiCall(1)">Search</button>
+		  </div>		  
+		</div> -->
+		<div>
+			<select id="sortby-year" name="sortby-year">
+				<option value="na" selected>Most relevant</option>
+				<option value="asc">Ascending</option>
+				<option value="desc">Descending</option>
+			</select>
+		</div>
+	</nav>

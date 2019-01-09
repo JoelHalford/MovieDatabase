@@ -1,0 +1,73 @@
+<%- include partials/header.ejs %>
+
+	<div class="container">
+		<div class="head-container">
+			<section class="poster">
+				<% if (data["Poster"] == "N/A"){ %>
+				<% } else { %>
+				<img src=<%= data["Poster"] %> alt="Poster">
+				<% } %>
+			</section>
+			<section class="information">
+				<div class="title">
+					<h1><%= data["Title"] %></h1>
+					<p>Release: <%= data["Released"] %> 
+						| Runtime: <%= data["Runtime"] %> 
+						<% if(data["Type"] == "series"){ %>
+
+							| Seasons: <%= data["totalSeasons"] %> 
+
+						<% } %>
+						| Rated: <%= data["Rated"] %>
+					</p>
+				</div>
+				<div class="movie-data">
+					<div class="production">
+						<span class="tag-title">Production</span>
+						<p><strong>Director</strong> - <%= data["Director"] %></p>
+						<% if (data["Type"] != "game") { %>
+							<p><strong>Cast</strong> - <%= data["Actors"] %>...</p>
+						<% } %>
+					</div>
+					<div class="statistics">		
+						<p>
+							<span class="tag-title">Statistics</span>
+							<p>IMDB rating - <%= data["imdbRating"] %></p>
+							<p>Votes: <%= data["imdbVotes"] %></p>				
+						</p>
+					</div>
+					<div class="description">
+						<span class="tag-title">Description</span>
+						<p>Type: <%= data["Type"] %></p>
+						<p>Genre: <%= data["Genre"] %></p>
+					</div>
+					<div class="website">
+						<span class="tag-title">Website: </span>
+						<%  if (data['Website'] != "N/A") { %>
+							<a href=<%= data['Website'] %> target="_blank"><%= data["Title"] %></a>
+						<% } else { %>
+							No website available.
+						<% } %>
+					</div>		
+				</div>	
+			</section>
+		</div>	
+		<div class="body-container">
+			<section class="details">
+				<div class="plot">
+					<h4 class="tag-title">Summary</h4>
+					<p><%= data["Plot"] %><p>					
+				</div>
+				<div class="awards">
+					<h4 class="tag-title">Awards</h4>
+					<p><%= data["Awards"] %></p>
+				</div>
+			</section>
+			<section class="related">
+				
+			</section>
+		</div>
+	</div>
+	<script type="text/javascript" src="../main.js"></script>
+</body>
+</html>

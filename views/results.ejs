@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movies</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<h1></h1>
+	<ul>
+    <% data["Search"].forEach(function(movie){ %>
+        <li><strong><a href="/movie/<%= movie['imdbID'] %>"><%= movie["Title"] %></a></strong> - <em><%= movie["Year"] %> - <%= movie['imdbID'] %></em></li>
+    <% }); %>
+	</ul>
+	<p id="show-page"></p>
+	<a href="/">Search again</a>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
